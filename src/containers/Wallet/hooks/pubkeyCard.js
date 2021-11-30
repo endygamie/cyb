@@ -4,7 +4,6 @@ import { getBalance, getTotalEUL } from '../../../utils/search/utils';
 import { COSMOS, AUCTION, NETWORKSIDS } from '../../../utils/config';
 import { useGetBalance } from '../../account/hooks';
 import waitForWeb3 from '../../../components/web3/waitForWeb3';
-import abiToken from '../../../../contracts/Token';
 
 export const useAddressInfo = (accounts, updateCard) => {
   const [loadingInfo, setLoadingInfo] = useState(true);

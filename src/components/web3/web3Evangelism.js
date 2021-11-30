@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import waitForWeb3 from './waitForWeb3';
-import abiEvangelism from '../../../contracts/Evangelism';
 import { Loading } from '../index';
 import NotFound from '../../containers/application/notFound';
 

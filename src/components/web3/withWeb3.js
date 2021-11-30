@@ -1,10 +1,5 @@
 import React, { PureComponent } from 'react';
 import waitForWeb3 from './waitForWeb3';
-import abiAuction from '../../../contracts/Auction';
-import abiAuctionUtils from '../../../contracts/AuctionUtils';
-import abiToken from '../../../contracts/Token';
-import abiVesting from '../../../contracts/Vesting';
-import TokenManager from '../../../contracts/TokenManager.json';
 
 import { Loading } from '../index';
 import NotFound from '../../containers/application/notFound';

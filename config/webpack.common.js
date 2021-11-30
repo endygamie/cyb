@@ -4,14 +4,12 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+
   // Where webpack looks to start building the bundle
-  // Откуда начинается сборка
-  //   entry: { main: path.resolve(__dirname, '../src/index.js') },
   entry: [path.join(__dirname, '../src', 'index.js')],
   node: { fs: 'empty' },
 
   // Where webpack outputs the assets and bundles
-  // Куда помещаются файлы сборки
   output: {
     filename: '[name].bundle.js',
     path: path.join(__dirname, '../build'),
@@ -19,22 +17,13 @@ module.exports = {
   },
 
   // Customize the webpack build process
-  // Настройки
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
-    // Удаление/очистка директории для файлов сборки и неиспользуемых ресурсов при повтроном сборке
     new CleanWebpackPlugin(),
 
-    // Copies files from target to destination folder
-    // Копирование статических файлов
-
     // Generates an HTML file from a template
-    // Создание HTML-файла на основе шаблона
     new HTMLWebpackPlugin({
-      //   favicon: `${paths.src}/images/favicon.ico`,
       // template file
-      // шаблон
-      //   template: path.join(__dirname, '../src', 'index.html'),
       template: path.join(__dirname, '../src', 'index.html'),
       filename: 'index.html',
       inject: 'body',
@@ -42,11 +31,9 @@ module.exports = {
   ],
 
   // Determine how modules within the project are treated
-  // Настройка модулей
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      // JavaScript: использовать Babel для транспиляции
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -55,7 +42,6 @@ module.exports = {
       },
 
       // Styles: Inject CSS into the head with source maps
-      // Стили: встроить CSS в head с картами источников
       {
         test: /\.(scss|css)$/,
         use: [
@@ -70,7 +56,6 @@ module.exports = {
       },
 
       // Images: Copy image files to build folder
-      // Изображения: копировать файлы в директорию для файлов сборки
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader'],

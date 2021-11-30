@@ -2,10 +2,6 @@ import React, { PureComponent } from 'react';
 import { ActionBar } from '@cybercongress/gravity';
 import waitForWeb3 from './waitForWeb3';
 
-import abiToken from '../../../contracts/Token';
-import abiVesting from '../../../contracts/Vesting';
-import TokenManager from '../../../contracts/TokenManager.json';
-
 import { Loading, ActionBarContentText } from '../index';
 import NotFound from '../../containers/application/notFound';
 
